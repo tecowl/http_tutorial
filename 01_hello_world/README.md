@@ -1,11 +1,5 @@
 # Hello, World!
 
-## 使用するツール
-
-- ruby
-- curl
-- Chrome
-
 ## 動かしてみる
 
 ### ターミナルA
@@ -15,15 +9,29 @@ $ cd path/to/http_tutorial/01_hello_world
 $ ruby server.rb
 ```
 
+### ブラウザ
+
+http://127.0.0.1:8080/ をChromeで開く
+
 ### ターミナルB
+
+HTTP(S)でのリクエストをコマンドで送信する際はcurlを使うことが多いです。
 
 ```
 $ curl http://127.0.0.1:8080/
 Hello, World!
 ```
 
-`Hello, World!` と表示されることを確認する。
+より低レベルな `nc` コマンドを使うこともできます。
 
+```
+$ echo "GET /" | nc 127.0.0.1 8080
+Hello, World!
+```
+
+## 通信を見てみる
+
+### curl
 
 ```
 $ curl http://127.0.0.1:8080/ -v
@@ -37,7 +45,7 @@ $ curl http://127.0.0.1:8080/ -v
 > 
 < HTTP/1.1 200 OK 
 < Server: WEBrick/1.4.2 (Ruby/2.5.5/2019-03-15)
-< Date: Fri, 26 Jul 2019 03:43:59 GMT
+< Date: Fri, 26 Jul 2019 06:50:25 GMT
 < Content-Length: 13
 < Connection: Keep-Alive
 < 
@@ -45,29 +53,31 @@ $ curl http://127.0.0.1:8080/ -v
 Hello, World!
 ```
 
-`Hello, World!` 以外に色々表示されることを確認する
-この表示されているものは何なのか調べる。
+### ブラウザ
 
-### ターミナルC
-
-より低いレイヤーのコマンドで送信してみる
-
-```
-$ echo "GET /" | nc 127.0.0.1 8080
-Hello, World!
-```
-
-
-### Chrome
-
+1. Chromeを開く
 1. `Developer tools` の `Network` を開く
-1. Chromeで URLに `http://127.0.0.1:8080/` を指定して開く
-1. 指定したURLのリクエストを探して選択しする
-1. 内容を確認する
+1. URLに http://127.0.0.1:8080/ を入力する
+    リクエストが送信され、Networkに通信の結果が出力される
+    ![network01](./network01.png)
+1. 該当するリクエストの内容を表示する
+    ![network02](./network02.png)
 
+## プロトコルを調べる方法を知る
 
-### 考えてみる
+プロトコルとは通信を行うための手順やフォーマットを指す。
+curlとサーバ、あるいはブラウザとサーバが通信を行う方法もプロトコルに則って行われる。
 
-1. 表示されたものは何か推測してみる
-1. 表示されたものをHTTPの用語を使って説明できるか
-1. curlコマンドを実行してから表示されるまでに何が起きているのかをできるだけ細かく説明してみる
+概要レベルならば https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol がわかり易いが、Wikipediaは間違った内容が含まれていることもある。
+入門レベルならば http://www.tohoho-web.com/ex/http.htm#request がわかり易い。
+細かい点を調べるならば https://developer.mozilla.org/ja/docs/Web/HTTP/Messages も良いだろう。
+
+プロトコルはブラウザやサーバの開発者などによって提案、実装されるが、その仕様はRFCで定義されるので、厳密な仕様は、RFCを参照するべきである。
+
+現時点での仕様は RFC 7230 から 7235 で定義されるが、量が多いので、基本的な部分だけであれば、RFC2616の方が読みやすいかもしれない。
+
+- https://triple-underscore.github.io/RFC723X-ja.html
+- https://triple-underscore.github.io/rfc-others/RFC2616-ja.html#section-3
+
+RFCでは厳密に仕様が決められているので、最終的な定義の確認が必要になったらRFCを確認する必要があるが、
+一般的な使用方法であればRFCを参照しなければならないことは極稀である。なので重要なのはRFCを読むことではない。

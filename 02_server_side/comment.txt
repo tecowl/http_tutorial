@@ -1,0 +1,3 @@
+A: HTTP is one of the most commonly used protocol.
+B: Really? I think voice is the most commonly one.
+A: Why don't we talk about the term "protocol" ?
