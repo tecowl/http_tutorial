@@ -9,6 +9,8 @@ $ cd path/to/http_tutorial/01_hello_world
 $ ruby server.rb
 ```
 
+[server.rb](server.rb) はとてもシンプルであることを確認。
+
 ### ブラウザ
 
 http://127.0.0.1:8080/ をChromeで開く
