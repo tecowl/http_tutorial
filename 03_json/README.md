@@ -123,7 +123,7 @@ cd path/to/http_tutorial/03_json
 irb
 ```
 
-JSONファイルからの読み込み
+[people.json](people.json)というJSONファイルからの読み込み
 
 ```
 content = File.read('people.json'); nil
