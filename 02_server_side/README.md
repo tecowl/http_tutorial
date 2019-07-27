@@ -12,6 +12,9 @@ $ cd path/to/http_tutorial/02_server_side
 $ ruby server1.rb
 ```
 
+[server1.rb](server1.rb) も確認。
+
+
 ### ターミナルB
 
 ```
@@ -32,6 +35,8 @@ curl -X POST http://127.0.0.1:8080/comments -F "nickname=akm" -F "comment=@comme
 
 さまざまなリクエストを送ってみてサーバ側にどう出力されるのか確認する。
 
+[comment.txt](comment.txt) はただのテキストファイルであることを確認。
+
 
 ## サーバ側の解釈
 
@@ -43,6 +48,8 @@ rubyのWEBrickというライブラリによってHTTPリクエストがどの�
 $ cd path/to/http_tutorial/02_server_side
 $ ruby server2.rb
 ```
+
+[server2.rb](server2.rb) でサーバ側に用意されている細かなメソッドなどを確認。
 
 ### ターミナルB
 
