@@ -1,6 +1,6 @@
 # Server side
 
-前回は、クライアント側でリクエストとレスポンスを確認したが、
+[前回のHello, World!](../01_hello_world/)では、クライアント側でリクエストとレスポンスを確認したが、
 今回はサーバ側でリクエストとレスポンスを確認する。
 
 ## 受け取ったリクエストをそのまま表示するサーバ
@@ -65,3 +65,9 @@ https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/Identifying_resour
 ## ヘッダについて調べる
 
 http://www.tohoho-web.com/ex/http.htm#headers を参照し、サーバ側やクライアント側で表示されているヘッダを調べる
+
+## 次回
+
+前回と今回は通信で使われるリクエストやレスポンスの構造を調べたが、次回はリクエストやレスポンスのBodyによく使われるJSONを触ってみる
+
+[次回 JSONへ](../03_json/) 
