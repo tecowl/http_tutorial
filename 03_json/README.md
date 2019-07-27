@@ -1,5 +1,7 @@
 # JSON
 
+[前回のServer side](../02_server_side/) と [前々回の Hello, World!](../01_hello_world/) ではHTTPのリクエストとレスポンスの構造を調べたが、今回はそのBodyによく使われるJSONについて学ぶ。
+
 ## JSONの概要
 
 JSON の定義 https://www.json.org/json-ja.html
@@ -173,3 +175,8 @@ cat people-without-indent.json | jq ".[] | {id: ._id, name: .name}"
 ```
 
 jqの詳しい使い方は https://dev.classmethod.jp/tool/jq-manual-japanese-translation-roughly/ がわかり易い。
+
+
+## 次回
+
+次回は、これまでに学んだHTTPの基本とJSONを使ったRESTful APIを使ってみる
