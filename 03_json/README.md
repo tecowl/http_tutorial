@@ -144,8 +144,8 @@ puts JSON.pretty_generate(people[-1])
 
 ## 実際のJSONデータをjqで整形する
 
-[people.json](./people.json) の内容は、インデントしてあって読みやすくなっているが、実際のアプリケーションでは空白は除いて使用するため非常に読みにくくなる。
-rubyでインデントを除いたJSONを作ってみる。
+[people.json](./people.json) の内容は、インデントされているため読みやすくなっているが、実際のアプリケーションでは空白は除いて使用するため、非常に読みにくくなる。
+ここではまずrubyでインデントを除いたJSONを作ってみる。
 
 ```
 ruby -r json -e 'puts JSON.dump(JSON.parse(File.read("./people.json")))' > people-without-indent.json
