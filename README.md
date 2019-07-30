@@ -1,4 +1,4 @@
-# 実際に試してみるHTTPチュートリアル
+# HTTPチュートリアル
 
 ## 事前準備
 
@@ -30,6 +30,8 @@
 
 ## その他のトピック
 
-1. Content-TYpe
-1. CORS
+1. Content-Type
+1. Form
 1. Cookie
+1. XSS, CSRF, etc
+1. CORS
