@@ -34,9 +34,9 @@ XMLやYAMLと同じように扱うことができる。
 
 Chromeの `Developer tools` の `Console` を開いて以下を実行してみる
 
-### まずはJavascript Ojectを触る
+### まずはJavascript Objectを触る
 
-Javascript Oject は JSONではなく、JavaScript上のObjectや配列などのデータである。
+Javascript Object は JSONではなく、JavaScript上のObjectや配列などのデータである。
 
 ```
 people = [
@@ -77,8 +77,8 @@ people = [
 
 ```
 people[0]["id"]
-people[0]["compary"]
-people[0]["compary"]["name"]
+people[0]["company"]
+people[0]["company"]["name"]
 ```
 
 変更もできる
